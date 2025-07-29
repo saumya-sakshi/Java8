@@ -25,6 +25,10 @@ public class Test {
         display(list,p1.or(p3)); //predicate joining
         System.out.println("list of employees who are not associates");
         display(list,p1.negate()); //predicate joining
+
+        Predicate<Employee> isCEO = Predicate.isEqual(new Employee("Saumya", "CEO", 300000, "Pune"));
+        System.out.println("CEO of our company-");
+        display(list,isCEO);
     }
 
     public static void display(ArrayList<Employee> list, Predicate<Employee> p){
